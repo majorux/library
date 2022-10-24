@@ -28,3 +28,18 @@ function Remove(){
   index = index.dataset.index; 
   myLibrary.splice(index, 1);
 }
+
+function openTheForm() {
+  document.querySelector(".formOpaque").style.margin = "0%";
+}
+
+function closeTheForm() {
+  document.querySelector(".formOpaque").style.margin = "100%";
+}
+
+window.onclick = function (event) {
+  let modal = document.querySelector('.formOpaque');
+  if (event.target == modal && event.target != document.querySelector(".formContainer")) {
+    closeTheForm();
+  }
+}

@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,12 +24,12 @@
           <legend>PAGES:</legend>
           <input type = "text" name ="pages" id="pages" minlength="3" required> 
         </div>
-        <button class="addBook">ADD</button>
+        <button class="addBook" >ADD</button>
       </form>
     </div>
   </div>
   <div class="container">
-    <button class="addBook" onclick=addBook() >Add Book</button>
+    <button class="addBook" onclick=openTheForm() >Add Book</button>
     <div class="content">
       <div class="grid">
         <div class="info">
@@ -40,6 +41,5 @@
       </div> 
     </div>
   </div>
-  
 </body>
 </html>
