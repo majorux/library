@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bookshelf"></div>
   <div class="formOpaque">
     <div class="formContainer">
-      <form action="#" method="post">
+      <form>
         <div class="form">
           <legend>TITLE:</legend>
           <input type = "text" name ="title" id="title" minlength="3" required> 
@@ -22,9 +22,9 @@
         </div>
         <div class="form">
           <legend>PAGES:</legend>
-          <input type = "text" name ="pages" id="pages" minlength="3" required> 
+          <input type = "number" name ="pages" id="pages" maxlength="4" required> 
         </div>
-        <button class="addBook" >ADD</button>
+        <button class="addBook" onclick=addBookToLibrary() >ADD</button>
       </form>
     </div>
   </div>
@@ -41,5 +41,6 @@
       </div> 
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

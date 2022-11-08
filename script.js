@@ -1,4 +1,5 @@
 let myLibrary = [];
+let bookshelf = document.q
 
 
 class Book {
@@ -9,19 +10,43 @@ class Book {
     this.read = read;
   }
 }
-function addBookToLibrary(){
-  let name = document.getElementById('name');
-  let author = document.getElementById('author');
-  let pages = document.getElementById('pages');
 
-  name =  name.innerText;
-  author = author.innerText;
-  pages = pages.innerText;
+const title = document.querySelector('#title').value;
+const author = document.querySelector('#pages');
+const pages = document.querySelector('#pages');
+
+function addBookToLibrary(i){
+  let bookNode = document.createElement("div");
+  bookNode.classList.add("book");
+  bookNode.setAttribute("data-index", `${i}`);
+
+  const title = document.getElementById("title").value;
+  let titleNode = document.createElement("h2");
+  titleNode.innerHTML = `Title: ${title}`;
+
+  const author = document.getElementById("author").value;
+  let authorNode = document.createElement("h3");
+  authorNode.innerHTML = `Author: ${author}`;
+
+  const pages = document.getElementById("pages").value;
+  let pageNode = document.createElement("h3");
+  pageNode.innerHTML = `Pages: ${pages}`;
+
+  //const read = document.getElementById("read").value;
+  //let readNode = document.createElement("h3");
+  //readNode.innerHTML = `Read? ${read}${read === "Yes" ? "😃" : "😢"}`;
   
-  let newBook = new Book("name", "author", "pages");
-  myLibrary.push(newBook);
 
+  let newBook = new Book(title, author, pages,);
+  myLibrary.push(newBook);
+  bookNode.appendChild(titleNode);
+  bookNode.appendChild(authorNode);
+  bookNode.appendChild(pageNode);
+  //bookNode.appendChild(readNode);
+  //bookshelf.appendChild(bookNode);
+  
 }
+
 
 function Remove(){
   let index = e.target.getElementByClassName("table");
