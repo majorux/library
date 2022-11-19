@@ -47,7 +47,6 @@ body{
 
 .content{
   display: grid;
-  background-color: black;
   min-height: 30rem;
   width: 90%;
   grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;

@@ -11,7 +11,7 @@
   <div class="bookshelf"></div>
   <div class="formOpaque">
     <div class="formContainer">
-      <form>
+      <form onsubmit="return false">
         <div class="form">
           <legend>TITLE:</legend>
           <input type = "text" name ="title" id="title" minlength="3" required> 
@@ -23,6 +23,10 @@
         <div class="form">
           <legend>PAGES:</legend>
           <input type = "number" name ="pages" id="pages" maxlength="4" required> 
+        </div>
+        <div class="form">
+          <legend>READ?:</legend>
+          <input type = "text" name ="read" id="read" maxlength="4" required> 
         </div>
         <button class="addBook" onclick=addBookToLibrary() >ADD</button>
       </form>

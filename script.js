@@ -1,5 +1,6 @@
 let myLibrary = [];
 const bookshelf = document.querySelector(".content");
+let i = 0;
 
 
 
@@ -12,7 +13,7 @@ class Book {
   }
 }
 
-function addBookToLibrary(i){
+function addBookToLibrary(){
   let bookNode = document.createElement("div");
   const removeButton = document.createElement("button")
   removeButton.classList.add("removeBook")
@@ -33,31 +34,33 @@ function addBookToLibrary(i){
   let pageNode = document.createElement("h5");
   pageNode.innerHTML = `PAGES: ${pages}`;
 
-  //const read = document.getElementById("read").value;
-  //let readNode = document.createElement("h3");
-  //readNode.innerHTML = `Read? ${read}${read === "Yes" ? "😃" : "😢"}`;
+  const read = document.getElementById("read").value;
+  let readNode = document.createElement("h3");
+  readNode.innerHTML = `READ?: ${read}${read === "Yes" ? "YES" : "NO"}`;
   
 
 
-  let newBook = new Book(title, author, pages,);
+  const newBook = new Book(title, author, pages,);
   myLibrary.push(newBook);
   bookNode.appendChild(titleNode);
   bookNode.appendChild(authorNode);
   bookNode.appendChild(pageNode);
+  bookNode.appendChild(readNode);
   bookNode.appendChild(removeButton);
-  //bookNode.appendChild(readNode);
   bookshelf.appendChild(bookNode);
 
   closeTheForm()
+  i++;
   
 }
 
+document.addEventListener('click', (event) => {
+  const remove = document.querySelector(".removeBook")
+  if (event.target == remove) {
+    bookshelf.removeChild(remove.parentElement)
+  }
+});
 
-function Remove(){
-  let index = e.target.getElementByClassName("table");
-  index = index.dataset.index; 
-  myLibrary.splice(index, 1);
-}
 
 function openTheForm() {
   document.querySelector(".formOpaque").style.margin = "0%";
