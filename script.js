@@ -36,7 +36,7 @@ function addBookToLibrary(){
 
   const read = document.getElementById("read").value;
   let readNode = document.createElement("h3");
-  readNode.innerHTML = `READ?: ${read}${read === "Yes" ? "YES" : "NO"}`;
+  readNode.innerHTML = `READ?: ${read}`;
   
 
 
@@ -55,8 +55,8 @@ function addBookToLibrary(){
 }
 
 document.addEventListener('click', (event) => {
-  const remove = document.querySelector(".removeBook")
-  if (event.target == remove) {
+  const remove = event.target;
+  if (event.target.classList == "removeBook") {
     bookshelf.removeChild(remove.parentElement)
     const index = remove.parentElement.getAttribute('data-index');
     myLibrary.splice(index, 1);
