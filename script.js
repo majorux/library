@@ -58,6 +58,8 @@ document.addEventListener('click', (event) => {
   const remove = document.querySelector(".removeBook")
   if (event.target == remove) {
     bookshelf.removeChild(remove.parentElement)
+    const index = remove.parentElement.getAttribute('data-index');
+    myLibrary.splice(index, 1);
   }
 });
 
